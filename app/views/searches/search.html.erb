@@ -1,2 +1,22 @@
   <h2>Book search for "<%= @content %>"</h2>
-  <%= render 'books/index', books: @records %>
+
+<% if Book.where(book_category: @content ).exists? %>
+   <%= render 'books/index', books: @records %>
+<% else %>
+
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+<td><h1>みずきちゃん!! それはないよ♥</h1></td>
+  </tbody>
+</table>
+
+<% end %>

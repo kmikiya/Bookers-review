@@ -16,4 +16,7 @@ class Book < ApplicationRecord
 	def self.search(content)
     Book.where(book_category: content)
   end
+
+
+
 end
