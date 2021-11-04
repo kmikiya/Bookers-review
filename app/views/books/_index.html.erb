@@ -1,8 +1,8 @@
 
 <table class='table table-hover table-inverse'>
   <thead>
-    <%= link_to '新着順', books_path(created_at: "true") %>
-　　<%= link_to '評価順', books_path(evaluation: "true") %>
+    <%= link_to '新着順', books_path(order: "created_at") %>
+　　<%= link_to '評価順', books_path(order: "evaluation") %>
 
     <tr>
       <th></th>

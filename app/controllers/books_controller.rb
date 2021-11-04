@@ -11,7 +11,7 @@ class BooksController < ApplicationController
   end
 
   def index
-      @books = Book.all.order(evaluation: :desc)
+    @books = Book.all.order(order_by)
     @book = Book.new
   end
 
@@ -54,4 +54,10 @@ class BooksController < ApplicationController
       redirect_to books_path
     end
   end
+
+  def order_by
+    allow = ["evaluation", "updated_at"]
+    allow.include?(params[:order]) ? params[:order] : "created_at"
+  end
+
 end
